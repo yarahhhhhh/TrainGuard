@@ -133,7 +133,7 @@ Add this configuration:
 }
 ```
 
-**⚠️ Important:**
+**Important:**
 - Replace `/absolute/path/to/` with the full path to your `llm-graph-builder-mcp` directory
   - Run `pwd` in the `llm-graph-builder-mcp` directory to get this path
   - Example: `/Users/yourname/projects/llm-graph-builder-mcp`
