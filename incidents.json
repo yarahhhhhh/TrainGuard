@@ -1,0 +1,226 @@
+[
+  {
+    "title": "1.2.1 Collisions\thors\tpassages\tà\tniveau",
+    "analysis": {
+      "incident_type": "COLLISION_HORS_PN",
+      "possible_impacts": [],
+      "possible_root_causes": [],
+      "cypher": []
+    }
+  },
+  {
+    "title": "Données PROCIDA",
+    "analysis": {
+      "incident_type": "COLLISION_HORS_PN",
+      "possible_impacts": [
+        "COLLISION"
+      ],
+      "possible_root_causes": [
+        [
+          "OBSTACLE_VOIE",
+          "HIGH"
+        ],
+        [
+          "ERREUR_HUMAINE",
+          "LOW"
+        ]
+      ],
+      "cypher": [
+        "MERGE (it:IncidentType {name:'COLLISION_HORS_PN'})",
+        "MERGE (imp:Impact {name:'COLLISION'})",
+        "MERGE (it)-[:HAS_IMPACT]->(imp)",
+        "MERGE (it:IncidentType {name:'COLLISION_HORS_PN'})",
+        "MERGE (rc:RootCause {name:'OBSTACLE_VOIE'})",
+        "MERGE (it)-[:HAS_CAUSE {likelihood:'HIGH'}]->(rc)",
+        "MERGE (it:IncidentType {name:'COLLISION_HORS_PN'})",
+        "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'})",
+        "MERGE (it)-[:HAS_CAUSE {likelihood:'LOW'}]->(rc)",
+        "MERGE (imp:Impact {name:'COLLISION'})",
+        "MERGE (rc:RootCause {name:'OBSTACLE_VOIE'})",
+        "MERGE (imp)-[:LINKED_TO_CAUSE]->(rc)",
+        "MERGE (imp:Impact {name:'COLLISION'})",
+        "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'})",
+        "MERGE (imp)-[:LINKED_TO_CAUSE]->(rc)"
+      ]
+    }
+  },
+  {
+    "title": "1.2.2 Déraillements",
+    "analysis": {
+      "incident_type": "DERAILLEMENT",
+      "possible_impacts": [],
+      "possible_root_causes": [
+        [
+          "DEFAILLANCE_TECHNIQUE",
+          "HIGH"
+        ],
+        [
+          "ERREUR_HUMAINE",
+          "HIGH"
+        ],
+        [
+          "INFRA_DEGRADEE",
+          "HIGH"
+        ]
+      ],
+      "cypher": [
+        "MERGE (it:IncidentType {name:'DERAILLEMENT'})",
+        "MERGE (rc:RootCause {name:'DEFAILLANCE_TECHNIQUE'})",
+        "MERGE (it)-[:HAS_CAUSE {likelihood:'HIGH'}]->(rc)",
+        "MERGE (it:IncidentType {name:'DERAILLEMENT'})",
+        "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'})",
+        "MERGE (it)-[:HAS_CAUSE {likelihood:'HIGH'}]->(rc)",
+        "MERGE (it:IncidentType {name:'DERAILLEMENT'})",
+        "MERGE (rc:RootCause {name:'INFRA_DEGRADEE'})",
+        "MERGE (it)-[:HAS_CAUSE {likelihood:'HIGH'}]->(rc)"
+      ]
+    }
+  },
+  {
+    "title": "1.2.3 Accidents\taux\tpassages\tà\tniveau",
+    "analysis": {
+      "incident_type": "PASSAGE_A_NIVEAU",
+      "possible_impacts": [
+        "DOMMAGE_HUMAIN"
+      ],
+      "possible_root_causes": [
+        [
+          "ERREUR_HUMAINE",
+          "HIGH"
+        ]
+      ],
+      "cypher": [
+        "MERGE (it:IncidentType {name:'PASSAGE_A_NIVEAU'})",
+        "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})",
+        "MERGE (it)-[:HAS_IMPACT]->(imp)",
+        "MERGE (it:IncidentType {name:'PASSAGE_A_NIVEAU'})",
+        "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'})",
+        "MERGE (it)-[:HAS_CAUSE {likelihood:'HIGH'}]->(rc)",
+        "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})",
+        "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'})",
+        "MERGE (imp)-[:LINKED_TO_CAUSE]->(rc)"
+      ]
+    }
+  },
+  {
+    "title": "1.2.4 Passages\tà\tniveau (PN)",
+    "analysis": {
+      "incident_type": "",
+      "possible_impacts": [],
+      "possible_root_causes": [],
+      "cypher": []
+    }
+  },
+  {
+    "title": "CONTEXTE",
+    "analysis": {
+      "incident_type": "PASSAGE_A_NIVEAU",
+      "possible_impacts": [],
+      "possible_root_causes": [
+        [
+          "ERREUR_HUMAINE",
+          "HIGH"
+        ]
+      ],
+      "cypher": [
+        "MERGE (it:IncidentType {name:'PASSAGE_A_NIVEAU'})",
+        "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'})",
+        "MERGE (it)-[:HAS_CAUSE {likelihood:'HIGH'}]->(rc)"
+      ]
+    }
+  },
+  {
+    "title": "LEVIERS MAJEURS D'AMÉLIORATION",
+    "analysis": {
+      "incident_type": "PASSAGE_A_NIVEAU",
+      "possible_impacts": [],
+      "possible_root_causes": [
+        [
+          "ERREUR_HUMAINE",
+          "HIGH"
+        ]
+      ],
+      "cypher": [
+        "MERGE (it:IncidentType {name:'PASSAGE_A_NIVEAU'})",
+        "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'})",
+        "MERGE (it)-[:HAS_CAUSE {likelihood:'HIGH'}]->(rc)"
+      ]
+    }
+  },
+  {
+    "title": "RÉALISATIONS 2023",
+    "analysis": {
+      "incident_type": "PASSAGE_A_NIVEAU",
+      "possible_impacts": [],
+      "possible_root_causes": [],
+      "cypher": [
+        "MERGE (it:IncidentType {name:'PASSAGE_A_NIVEAU'})"
+      ]
+    }
+  },
+  {
+    "title": "1.2.5 Accidents\tde\tpersonnes\thors\tpassages\tà\tniveau\t(en\tligne\tet\ten\tgare)",
+    "analysis": {
+      "incident_type": "ACCIDENT_PERSONNE_HORS_PN",
+      "possible_impacts": [
+        "COLLISION",
+        "DOMMAGE_HUMAIN"
+      ],
+      "possible_root_causes": [
+        [
+          "ERREUR_HUMAINE",
+          "HIGH"
+        ]
+      ],
+      "cypher": [
+        "MERGE (it:IncidentType {name:'ACCIDENT_PERSONNE_HORS_PN'})",
+        "MERGE (imp:Impact {name:'COLLISION'})",
+        "MERGE (it)-[:HAS_IMPACT]->(imp)",
+        "MERGE (it:IncidentType {name:'ACCIDENT_PERSONNE_HORS_PN'})",
+        "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})",
+        "MERGE (it)-[:HAS_IMPACT]->(imp)",
+        "MERGE (it:IncidentType {name:'ACCIDENT_PERSONNE_HORS_PN'})",
+        "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'})",
+        "MERGE (it)-[:HAS_CAUSE {likelihood:'HIGH'}]->(rc)",
+        "MERGE (imp:Impact {name:'COLLISION'})",
+        "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'})",
+        "MERGE (imp)-[:LINKED_TO_CAUSE]->(rc)",
+        "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})",
+        "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'})",
+        "MERGE (imp)-[:LINKED_TO_CAUSE]->(rc)"
+      ]
+    }
+  },
+  {
+    "title": "1.2.6 Incendies du matériel roulant",
+    "analysis": {
+      "incident_type": "",
+      "possible_impacts": [],
+      "possible_root_causes": [],
+      "cypher": []
+    }
+  },
+  {
+    "title": "En 2023, les incendies de matériel roulant n'ont pas\teu\tde\tconséquence\thumaine.",
+    "analysis": {
+      "incident_type": "INCIDENT_MATERIEL_ROULANT",
+      "possible_impacts": [
+        "DOMMAGE_MATERIEL",
+        "DOMMAGE_INFRA"
+      ],
+      "possible_root_causes": [
+        [
+          "DEFAILLANCE_TECHNIQUE",
+          "HIGH"
+        ]
+      ],
+      "cypher": [
+        "MERGE (it:IncidentType {name:'INCIDENT_MATERIEL_ROULANT'})\nMERGE (imp:Impact {name:'DOMMAGE_MATERIEL'})\nMERGE (it)-[:HAS_IMPACT]->(imp)",
+        "MERGE (it:IncidentType {name:'INCIDENT_MATERIEL_ROULANT'})\nMERGE (imp:Impact {name:'DOMMAGE_INFRA'})\nMERGE (it)-[:HAS_IMPACT]->(imp)",
+        "MERGE (it:IncidentType {name:'INCIDENT_MATERIEL_ROULANT'})\nMERGE (rc:RootCause {name:'DEFAILLANCE_TECHNIQUE'})\nMERGE (it)-[:HAS_CAUSE {likelihood:'HIGH'}]->(rc)",
+        "MERGE (imp:Impact {name:'DOMMAGE_MATERIEL'})\nMERGE (rc:RootCause {name:'DEFAILLANCE_TECHNIQUE'})\nMERGE (imp)-[:LINKED_TO_CAUSE]->(rc)",
+        "MERGE (imp:Impact {name:'DOMMAGE_INFRA'})\nMERGE (rc:RootCause {name:'DEFAILLANCE_TECHNIQUE'})\nMERGE (imp)-[:LINKED_TO_CAUSE]->(rc)"
+      ]
+    }
+  }
+]

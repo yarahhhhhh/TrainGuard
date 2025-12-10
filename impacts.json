@@ -1,0 +1,216 @@
+[
+  {
+    "title": "1.2.1 Collisions\thors\tpassages\tà\tniveau",
+    "analysis": [
+      {
+        "impact_category": "COLLISION",
+        "normalized_subtype": "collision_hors_passage_niveau",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'COLLISION'})\nMERGE (sub:SubImpact {name:'collision_hors_passage_niveau'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      }
+    ]
+  },
+  {
+    "title": "Données PROCIDA",
+    "analysis": [
+      {
+        "impact_category": "COLLISION",
+        "normalized_subtype": "collision_obstacle_voie",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'COLLISION'})\nMERGE (sub:SubImpact {name:'collision_obstacle_voie'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "COLLISION",
+        "normalized_subtype": "collision_infrastructure_gabarit",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'COLLISION'})\nMERGE (sub:SubImpact {name:'collision_infrastructure_gabarit'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "COLLISION",
+        "normalized_subtype": "collision_vehicules_ferroviaires",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'COLLISION'})\nMERGE (sub:SubImpact {name:'collision_vehicules_ferroviaires'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "COLLISION",
+        "normalized_subtype": "heurt_materiel_stationne",
+        "root_cause": "train_reception_voie_occupee",
+        "cypher_impact": "MERGE (imp:Impact {name:'COLLISION'})\nMERGE (sub:SubImpact {name:'heurt_materiel_stationne'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)",
+        "cypher_root_cause": "MERGE (sub:SubImpact {name:'heurt_materiel_stationne'})\nMERGE (rc:RootCause {name:'train_reception_voie_occupee'})\nMERGE (sub)-[:A_POUR_CAUSE_RACINE]->(rc)"
+      },
+      {
+        "impact_category": "COLLISION",
+        "normalized_subtype": "train_reception_voie_occupee",
+        "root_cause": "incident_exploitation",
+        "cypher_impact": "MERGE (imp:Impact {name:'COLLISION'})\nMERGE (sub:SubImpact {name:'train_reception_voie_occupee'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)",
+        "cypher_root_cause": "MERGE (sub:SubImpact {name:'train_reception_voie_occupee'})\nMERGE (rc:RootCause {name:'incident_exploitation'})\nMERGE (sub)-[:A_POUR_CAUSE_RACINE]->(rc)"
+      }
+    ]
+  },
+  {
+    "title": "1.2.2 Déraillements",
+    "analysis": [
+      {
+        "impact_category": "DOMMAGE_MATERIEL",
+        "normalized_subtype": "deraillement_voies_principales",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_MATERIEL'})\nMERGE (sub:SubImpact {name:'deraillement_voies_principales'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "DOMMAGE_MATERIEL",
+        "normalized_subtype": "deraillement_voies_service",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_MATERIEL'})\nMERGE (sub:SubImpact {name:'deraillement_voies_service'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "DOMMAGE_MATERIEL",
+        "normalized_subtype": "deraillement_voies_interceptees_travaux",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_MATERIEL'})\nMERGE (sub:SubImpact {name:'deraillement_voies_interceptees_travaux'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "DOMMAGE_MATERIEL",
+        "normalized_subtype": "deraillement_talonnage_aiguille",
+        "root_cause": "franchissement_signal_ferme",
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_MATERIEL'})\nMERGE (sub:SubImpact {name:'deraillement_talonnage_aiguille'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)",
+        "cypher_root_cause": "MERGE (cause:RootCause {name:'franchissement_signal_ferme'})\nMERGE (sub:SubImpact {name:'deraillement_talonnage_aiguille'})\nMERGE (sub)-[:A_POUR_CAUSE]->(cause)"
+      }
+    ]
+  },
+  {
+    "title": "1.2.3 Accidents\taux\tpassages\tà\tniveau",
+    "analysis": [
+      {
+        "impact_category": "COLLISION",
+        "normalized_subtype": "collision_passage_niveau",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'COLLISION'})\nMERGE (sub:SubImpact {name:'collision_passage_niveau'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "DOMMAGE_HUMAIN",
+        "normalized_subtype": "deces_usager_routier_passage_niveau",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})\nMERGE (sub:SubImpact {name:'deces_usager_routier_passage_niveau'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "DOMMAGE_HUMAIN",
+        "normalized_subtype": "blesse_grave_usager_routier_passage_niveau",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})\nMERGE (sub:SubImpact {name:'blesse_grave_usager_routier_passage_niveau'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "DOMMAGE_HUMAIN",
+        "normalized_subtype": "blesse_leger_personne_train_passage_niveau",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})\nMERGE (sub:SubImpact {name:'blesse_leger_personne_train_passage_niveau'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "DOMMAGE_HUMAIN",
+        "normalized_subtype": "blesse_grave_personne_train_passage_niveau",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})\nMERGE (sub:SubImpact {name:'blesse_grave_personne_train_passage_niveau'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "DOMMAGE_HUMAIN",
+        "normalized_subtype": "deces_personne_train_passage_niveau",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})\nMERGE (sub:SubImpact {name:'deces_personne_train_passage_niveau'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      }
+    ]
+  },
+  {
+    "title": "1.2.4 Passages\tà\tniveau (PN)",
+    "analysis": []
+  },
+  {
+    "title": "CONTEXTE",
+    "analysis": [
+      {
+        "impact_category": "COLLISION",
+        "normalized_subtype": "collision_passage_a_niveau",
+        "root_cause": "non_respect_signalisation_routiere",
+        "cypher_impact": "MERGE (imp:Impact {name:'COLLISION'})\nMERGE (sub:SubImpact {name:'collision_passage_a_niveau'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)\nMERGE (rc:Cause {name:'non_respect_signalisation_routiere'})\nMERGE (sub)-[:A_POUR_CAUSE]->(rc)"
+      }
+    ]
+  },
+  {
+    "title": "LEVIERS MAJEURS D'AMÉLIORATION",
+    "analysis": []
+  },
+  {
+    "title": "RÉALISATIONS 2023",
+    "analysis": []
+  },
+  {
+    "title": "1.2.5 Accidents\tde\tpersonnes\thors\tpassages\tà\tniveau\t(en\tligne\tet\ten\tgare)",
+    "analysis": [
+      {
+        "impact_category": "DOMMAGE_HUMAIN",
+        "normalized_subtype": "heurt_pleine_ligne",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})\nMERGE (sub:SubImpact {name:'heurt_pleine_ligne'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "DOMMAGE_HUMAIN",
+        "normalized_subtype": "chute_personne",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})\nMERGE (sub:SubImpact {name:'chute_personne'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "DOMMAGE_HUMAIN",
+        "normalized_subtype": "heurt_bord_quai",
+        "root_cause": "stationnement_bord_quai",
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})\nMERGE (sub:SubImpact {name:'heurt_bord_quai'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)",
+        "cypher_root_cause": "MERGE (sub:SubImpact {name:'heurt_bord_quai'})\nMERGE (cause:Cause {name:'stationnement_bord_quai'})\nMERGE (sub)-[:A_POUR_CAUSE]->(cause)"
+      },
+      {
+        "impact_category": "DOMMAGE_HUMAIN",
+        "normalized_subtype": "heurt_montee_descente_train",
+        "root_cause": "montee_descente_train",
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})\nMERGE (sub:SubImpact {name:'heurt_montee_descente_train'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)",
+        "cypher_root_cause": "MERGE (sub:SubImpact {name:'heurt_montee_descente_train'})\nMERGE (cause:Cause {name:'montee_descente_train'})\nMERGE (sub)-[:A_POUR_CAUSE]->(cause)"
+      },
+      {
+        "impact_category": "DOMMAGE_HUMAIN",
+        "normalized_subtype": "heurt_traversee_voies",
+        "root_cause": "traversee_voies",
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_HUMAIN'})\nMERGE (sub:SubImpact {name:'heurt_traversee_voies'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)",
+        "cypher_root_cause": "MERGE (sub:SubImpact {name:'heurt_traversee_voies'})\nMERGE (cause:Cause {name:'traversee_voies'})\nMERGE (sub)-[:A_POUR_CAUSE]->(cause)"
+      }
+    ]
+  },
+  {
+    "title": "1.2.6 Incendies du matériel roulant",
+    "analysis": [
+      {
+        "impact_category": "DOMMAGE_MATERIEL",
+        "normalized_subtype": "incendie_materiel_roulant",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_MATERIEL'})\nMERGE (sub:SubImpact {name:'incendie_materiel_roulant'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      }
+    ]
+  },
+  {
+    "title": "En 2023, les incendies de matériel roulant n'ont pas\teu\tde\tconséquence\thumaine.",
+    "analysis": [
+      {
+        "impact_category": "DOMMAGE_MATERIEL",
+        "normalized_subtype": "incendie_materiel_voyageur",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_MATERIEL'})\nMERGE (sub:SubImpact {name:'incendie_materiel_voyageur'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      },
+      {
+        "impact_category": "DOMMAGE_MATERIEL",
+        "normalized_subtype": "degagement_fumee",
+        "root_cause": "rupture_catenaires_sur_train",
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_MATERIEL'})\nMERGE (sub:SubImpact {name:'degagement_fumee'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)\nMERGE (rc:RootCause {name:'rupture_catenaires_sur_train'})\nMERGE (sub)-[:A_POUR_CAUSE]->(rc)"
+      },
+      {
+        "impact_category": "DOMMAGE_INFRA",
+        "normalized_subtype": "rupture_catenaires",
+        "root_cause": null,
+        "cypher_impact": "MERGE (imp:Impact {name:'DOMMAGE_INFRA'})\nMERGE (sub:SubImpact {name:'rupture_catenaires'})\nMERGE (sub)-[:EST_SOUS_IMPACT_DE]->(imp)"
+      }
+    ]
+  }
+]

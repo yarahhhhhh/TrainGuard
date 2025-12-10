@@ -1,0 +1,194 @@
+[
+  {
+    "title": "1.2.1 Collisions\thors\tpassages\tà\tniveau",
+    "analysis": []
+  },
+  {
+    "title": "Données PROCIDA",
+    "analysis": [
+      {
+        "root_cause": "OBSTACLE_VOIE",
+        "categorie_normalisee": "OBSTACLE_SUR_VOIE",
+        "cypher": "MERGE (rc:RootCause {name:'OBSTACLE_VOIE'}) MERGE (cat:CategorieNormalisee {name:'OBSTACLE_SUR_VOIE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "INFRA_DEGRADEE",
+        "categorie_normalisee": "INFRASTRUCTURE_INSUFFISANTE",
+        "cypher": "MERGE (rc:RootCause {name:'INFRA_DEGRADEE'}) MERGE (cat:CategorieNormalisee {name:'INFRASTRUCTURE_INSUFFISANTE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "NON_RESPECT_DES_REGLES",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'NON_RESPECT_DES_REGLES'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      }
+    ]
+  },
+  {
+    "title": "1.2.2 Déraillements",
+    "analysis": [
+      {
+        "root_cause": "DEFAILLANCE_TECHNIQUE",
+        "categorie_normalisee": "DEFAILLANCE_TECHNIQUE",
+        "cypher": "MERGE (rc:RootCause {name:'DEFAILLANCE_TECHNIQUE'}) MERGE (cat:CategorieNormalisee {name:'DEFAILLANCE_TECHNIQUE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "INATTENTION",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'INATTENTION'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "NON_RESPECT_DES_REGLES",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'NON_RESPECT_DES_REGLES'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "DEFAILLANCE_TECHNIQUE",
+        "categorie_normalisee": "DEFAILLANCE_TECHNIQUE",
+        "cypher": "MERGE (rc:RootCause {name:'DEFAILLANCE_TECHNIQUE'}) MERGE (cat:CategorieNormalisee {name:'DEFAILLANCE_TECHNIQUE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "INFRA_DEGRADEE",
+        "categorie_normalisee": "INFRASTRUCTURE_INSUFFISANTE",
+        "cypher": "MERGE (rc:RootCause {name:'INFRA_DEGRADEE'}) MERGE (cat:CategorieNormalisee {name:'INFRASTRUCTURE_INSUFFISANTE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "DEFAILLANCE_COMPORTEMENTALE_HUMAINE",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'DEFAILLANCE_COMPORTEMENTALE_HUMAINE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "OBSTACLE_VOIE",
+        "categorie_normalisee": "OBSTACLE_SUR_VOIE",
+        "cypher": "MERGE (rc:RootCause {name:'OBSTACLE_VOIE'}) MERGE (cat:CategorieNormalisee {name:'OBSTACLE_SUR_VOIE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      }
+    ]
+  },
+  {
+    "title": "1.2.3 Accidents\taux\tpassages\tà\tniveau",
+    "analysis": [
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "INATTENTION",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'INATTENTION'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      }
+    ]
+  },
+  {
+    "title": "1.2.4 Passages\tà\tniveau (PN)",
+    "analysis": []
+  },
+  {
+    "title": "CONTEXTE",
+    "analysis": [
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "NON_RESPECT_DES_REGLES",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'NON_RESPECT_DES_REGLES'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "INATTENTION",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'INATTENTION'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "DEFAILLANCE_COMPORTEMENTALE_HUMAINE",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'DEFAILLANCE_COMPORTEMENTALE_HUMAINE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      }
+    ]
+  },
+  {
+    "title": "LEVIERS MAJEURS D'AMÉLIORATION",
+    "analysis": [
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "DEFAILLANCE_COMPORTEMENTALE_HUMAINE",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'DEFAILLANCE_COMPORTEMENTALE_HUMAINE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "NON_RESPECT_DES_REGLES",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'NON_RESPECT_DES_REGLES'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "INFRA_DEGRADEE",
+        "categorie_normalisee": "INFRASTRUCTURE_INSUFFISANTE",
+        "cypher": "MERGE (rc:RootCause {name:'INFRA_DEGRADEE'}) MERGE (cat:CategorieNormalisee {name:'INFRASTRUCTURE_INSUFFISANTE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "INATTENTION",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'INATTENTION'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      }
+    ]
+  },
+  {
+    "title": "RÉALISATIONS 2023",
+    "analysis": [
+      {
+        "root_cause": "INFRA_DEGRADEE",
+        "categorie_normalisee": "INFRASTRUCTURE_INSUFFISANTE",
+        "cypher": "MERGE (rc:RootCause {name:'INFRA_DEGRADEE'}) MERGE (cat:CategorieNormalisee {name:'INFRASTRUCTURE_INSUFFISANTE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "INATTENTION",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'INATTENTION'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "NON_RESPECT_DES_REGLES",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'NON_RESPECT_DES_REGLES'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "DEFAILLANCE_COMPORTEMENTALE_HUMAINE",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'DEFAILLANCE_COMPORTEMENTALE_HUMAINE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      }
+    ]
+  },
+  {
+    "title": "1.2.5 Accidents\tde\tpersonnes\thors\tpassages\tà\tniveau\t(en\tligne\tet\ten\tgare)",
+    "analysis": [
+      {
+        "root_cause": "OBSTACLE_VOIE",
+        "categorie_normalisee": "OBSTACLE_SUR_VOIE",
+        "cypher": "MERGE (rc:RootCause {name:'OBSTACLE_VOIE'}) MERGE (cat:CategorieNormalisee {name:'OBSTACLE_SUR_VOIE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "INATTENTION",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'INATTENTION'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "NON_RESPECT_DES_REGLES",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'NON_RESPECT_DES_REGLES'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "DEFAILLANCE_COMPORTEMENTALE_HUMAINE",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'DEFAILLANCE_COMPORTEMENTALE_HUMAINE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      },
+      {
+        "root_cause": "ERREUR_HUMAINE",
+        "categorie_normalisee": "NON_RESPECT_DES_REGLES",
+        "cypher": "MERGE (rc:RootCause {name:'ERREUR_HUMAINE'}) MERGE (cat:CategorieNormalisee {name:'NON_RESPECT_DES_REGLES'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      }
+    ]
+  },
+  {
+    "title": "1.2.6 Incendies du matériel roulant",
+    "analysis": []
+  },
+  {
+    "title": "En 2023, les incendies de matériel roulant n'ont pas\teu\tde\tconséquence\thumaine.",
+    "analysis": [
+      {
+        "root_cause": "DEFAILLANCE_TECHNIQUE",
+        "categorie_normalisee": "DEFAILLANCE_TECHNIQUE",
+        "cypher": "MERGE (rc:RootCause {name:'DEFAILLANCE_TECHNIQUE'}) MERGE (cat:CategorieNormalisee {name:'DEFAILLANCE_TECHNIQUE'}) MERGE (cat)-[:EST_SOUS_CATEGORIE_DE]->(rc)"
+      }
+    ]
+  }
+]
