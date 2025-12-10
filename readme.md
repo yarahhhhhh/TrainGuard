@@ -1,7 +1,7 @@
 # SNCF Safety Knowledge Extraction Pipeline
 
 This project extracts **structured railway safety knowledge** from unstructured incident documents and prepares it for ingestion into a **Neo4J graph-based safety system**.  
-Its purpose is to help railway safety personnel analyze incidents, identify root causes, and justify maintenance or budget decisions using a connected safety knowledge graph.
+Its purpose is to help railway safety personnel analyze incidents, identify root causes, and justify maintenance or budget decisions using a connected safety knowledge graph. The data is from the SNCF opendata and can be viewed here: https://eu.ftp.opendatasoft.com/sncf/rapports/rapport-securite-2023.PDF
 
 ---
 
