@@ -51,8 +51,6 @@ Each classifier produces a JSON file:
 ├── causes.json
 └── impacts.json
 
-yaml
-Copier le code
 
 All files are ready for Neo4J ingestion.
 
@@ -109,7 +107,10 @@ This creates a navigable structure where analysts can:
 ### How Ingestion Works
 
 The ingestion route (`/neo4j_ingest`) reads the three JSON files and extracts every Cypher statement.  
-Each statement is executed sequentially using:
+
+![description of image](graphDB.JPG)
+![description of image](graphDB2.JPG)
+
 
 ```python
 driver.execute_query(cypher)
