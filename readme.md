@@ -104,6 +104,10 @@ This creates a navigable structure where analysts can:
 - justify maintenance decisions  
 - support risk scoring and prioritization  
 
+![description of image](graphDB.JPG)
+![description of image](graphDB2.JPG)
+![description of image](graphDB3.JPG)
+
 ### How Ingestion Works
 
 The ingestion route (`/neo4j_ingest`) reads the three JSON files and extracts every Cypher statement.  
@@ -111,8 +115,6 @@ The ingestion route (`/neo4j_ingest`) reads the three JSON files and extracts ev
 ```python
 driver.execute_query(cypher)
 
-![description of image](graphDB.JPG)
-![description of image](graphDB2.JPG)
-![description of image](graphDB3.JPG)
+
 
 
