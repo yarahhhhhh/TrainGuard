@@ -93,7 +93,6 @@ And several relationship types:
 - `(:IncidentType)-[:HAS_CAUSE {likelihood}]->(:RootCause)`
 - `(:Impact)-[:LINKED_TO_CAUSE]->(:RootCause)`
 - `(:SubImpact)-[:EST_SOUS_IMPACT_DE]->(:Impact)`
-- `(:CategorieNormalisee)-[:EST_SOUS_CATEGORIE_DE]->(:RootCause)`
 
 These relations form a **multi-layered safety graph** connecting:
 
