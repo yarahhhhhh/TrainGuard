@@ -1,8 +1,8 @@
-# SNCF Safety Knowledge Extraction Pipeline
+# SNCF Safety Knowledge Extraction Pipeline: AI TINKERERS Hackaton 10/12/25
 
 This project extracts **structured railway safety knowledge** from unstructured incident documents and prepares it for ingestion into a **Neo4J graph-based safety system**.  
 Its purpose is to help railway safety personnel analyze incidents, identify root causes, and justify maintenance or budget decisions using a connected safety knowledge graph. The data is from the SNCF opendata and can be viewed here: https://eu.ftp.opendatasoft.com/sncf/rapports/rapport-securite-2023.PDF
-
+This a basic version of the graph, it should be enriched to demonstrate its full capability. 
 ---
 
 ## Overview
@@ -82,7 +82,7 @@ The system generates and ingests four major types of nodes:
 - **Impact**
 - **SubImpact**
 - **RootCause**
-- **CategorieNormalisee**
+- **SubCause**
 
 And several relationship types:
 
@@ -94,7 +94,7 @@ And several relationship types:
 
 These relations form a **multi-layered safety graph** connecting:
 
-**Incident → Impact → Root Cause → Normalized Category**
+**Incident → Impact → Cause**
 
 This creates a navigable structure where analysts can:
 
