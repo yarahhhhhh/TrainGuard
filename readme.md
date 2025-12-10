@@ -108,9 +108,11 @@ This creates a navigable structure where analysts can:
 
 The ingestion route (`/neo4j_ingest`) reads the three JSON files and extracts every Cypher statement.  
 
-![description of image](graphDB.JPG)
-![description of image](graphDB2.JPG)
-
-
 ```python
 driver.execute_query(cypher)
+
+![description of image](graphDB.JPG)
+![description of image](graphDB2.JPG)
+![description of image](graphDB3.JPG)
+
+
